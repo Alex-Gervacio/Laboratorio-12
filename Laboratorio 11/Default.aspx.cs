@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Newtonsoft.Json;
+using System.IO;
 
 
 namespace Laboratorio_11
@@ -13,16 +14,31 @@ namespace Laboratorio_11
     {
         static List<Nota> NotasTemp = new List<Nota>();
         static List<Alumno> AlumnosTemp = new List<Alumno>();
-        static List<Universidad> UniversidadTemp = new List<Universidad>();
+        static List<Universidad> universidades = new List<Universidad>();
 
-        private void GuardarJson()
+        protected void GuardarJson()
         {
-            string json = JsonConvert.SerializeObject(UniversidadTemp);
+            string json = JsonConvert.SerializeObject(universidades);
             string archivo = Server.MapPath("Universidades.json");
             System.IO.File.WriteAllText(archivo, json);
         }
+        protected void Cargar()
+        {
+            string archivo = Server.MapPath("Universidades.json");
+
+            StreamReader jsonStream = File.OpenText(archivo);
+            string json = jsonStream.ReadToEnd();
+
+            jsonStream.Close();
+
+            universidades = JsonConvert.DeserializeObject<List<Universidad>>(json);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Cargar();
+            }
 
         }
 
@@ -56,7 +72,7 @@ namespace Laboratorio_11
             universidad.NombreU = DropDownList1.SelectedValue;
             universidad.Alumnos = AlumnosTemp.ToArray().ToList();
 
-            UniversidadTemp.Add(universidad);
+            universidades.Add(universidad);
 
             GuardarJson();
 
