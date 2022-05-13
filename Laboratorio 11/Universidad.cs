@@ -11,5 +11,7 @@ namespace Laboratorio_11
         public string Sede { get; set; }
 
        public List<Alumno> Alumnos { get; set; }
+       public List<Profesor> Profesores { get; set; }
+       public List<Administrativo> Administrativos { get; set; }
     }
 }

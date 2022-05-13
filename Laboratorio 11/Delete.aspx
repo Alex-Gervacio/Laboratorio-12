@@ -2,8 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Eliminar</h1>
     <p>
-        Carne
-        <asp:TextBox ID="TextBoxCarne" runat="server"></asp:TextBox>
+        ID:&nbsp;
+        <asp:TextBox ID="TextBoxID" runat="server"></asp:TextBox>
     </p>
     <p>
         <asp:Button ID="ButtonBuscar" runat="server" Text="Buscar" OnClick="ButtonBuscar_Click" />

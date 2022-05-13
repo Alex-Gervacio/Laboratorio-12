@@ -12,45 +12,48 @@ namespace Laboratorio_11
     public partial class Update : System.Web.UI.Page
     {
         static List <Universidad> universidades = new List <Universidad> ();
-        static string carne;
+        static List<Administrativo> admin = new List<Administrativo>();
+        static string igss;
 
         protected void GuardarJson()
         {
-            string json = JsonConvert.SerializeObject(universidades);
-            string archivo = Server.MapPath("Universidades.json");
+            string json = JsonConvert.SerializeObject(admin);
+            string archivo = Server.MapPath("Administrativos.json");
             System.IO.File.WriteAllText(archivo, json);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            string archivo = Server.MapPath("Universidades.json");
+            string archivo = Server.MapPath("Administrativos.json");
             StreamReader jsonStream = File.OpenText(archivo);
             string json = jsonStream.ReadToEnd();
             jsonStream.Close();
 
-            universidades = JsonConvert.DeserializeObject<List<Universidad>>(json);
+            admin = JsonConvert.DeserializeObject<List<Administrativo>>(json);
         }
 
         protected void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            carne = TextBoxCarne.Text;
+            igss = TextBoxIGSS.Text;
             bool encontrado = false;
 
-            foreach ( var u in universidades )
+            foreach ( var u in admin )
             {
-                Alumno alumnoAc = u.Alumnos.Find(c => c.Carne == carne);
+                Administrativo admisAc = admin.Find(c => c.IGSS == igss);
                 
-                if ( alumnoAc != null )
+                if ( admisAc != null )
                 {
-                    TextBoxNombre.Text = alumnoAc.Nombre;
-                    TextBoxApellido.Text = alumnoAc.Apellido;
+                    TextBoxNombre.Text = admisAc.Nombre;
+                    TextBoxApellido.Text = admisAc.Apellido;
+                    CalendarInicio.SelectedDate = admisAc.fechaIncio;
+                    CalendarFin.SelectedDate = admisAc.fechaFin;
                     encontrado = true;
                 }    
             }
             if (!encontrado)
             {
-                Response.Write("<script>alert('No se econtró el Carné')</script>");
-                carne = "";
-                TextBoxCarne.Text = "";
+                Response.Write("<script>alert('No se econtró el IGSS')</script>");
+                igss = "";
+                TextBoxIGSS.Text = "";
                 TextBoxNombre.Text = "";
                 TextBoxApellido.Text = "";
             }
@@ -61,12 +64,12 @@ namespace Laboratorio_11
         {
             foreach ( var u in universidades )
             {
-                int alumnoAc = u.Alumnos.FindIndex(c => c.Carne == carne);
+                int admisAc = u.Administrativos.FindIndex(c => c.IGSS == igss);
 
-                if (alumnoAc > -1)
+                if (admisAc > -1)
                 {
-                    u.Alumnos[alumnoAc].Apellido = TextBoxApellido.Text;
-                    u.Alumnos[alumnoAc].Nombre = TextBoxNombre.Text;
+                    u.Administrativos[admisAc].Apellido = TextBoxApellido.Text;
+                    u.Administrativos[admisAc].Nombre = TextBoxNombre.Text;
 
                     GuardarJson();
                 }

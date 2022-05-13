@@ -17,9 +17,13 @@
           }
         ],
         "Nombre": "Alex",
-        "Apellido": "Castello"
+        "Apellido": "Castello",
+        "Direccion": null,
+        "FechaNacimiento": "0001-01-01T00:00:00"
       }
-    ]
+    ],
+    "Profesores": null,
+    "Administrativos": null
   },
   {
     "NombreU": "Mesoamericana",
@@ -38,9 +42,13 @@
           }
         ],
         "Nombre": "Robin",
-        "Apellido": "Gómez"
+        "Apellido": "Gómez",
+        "Direccion": null,
+        "FechaNacimiento": "0001-01-01T00:00:00"
       }
-    ]
+    ],
+    "Profesores": null,
+    "Administrativos": null
   },
   {
     "NombreU": "Landivar",
@@ -55,8 +63,118 @@
           }
         ],
         "Nombre": "Andrés",
-        "Apellido": "Gervacio"
+        "Apellido": "Gervacio",
+        "Direccion": null,
+        "FechaNacimiento": "0001-01-01T00:00:00"
+      }
+    ],
+    "Profesores": null,
+    "Administrativos": null
+  },
+  {
+    "NombreU": "Mesoamericana",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": null,
+    "Administrativos": [
+      {
+        "IGSS": "Igss1",
+        "Profesion": null,
+        "fechaIncio": "2022-04-12T00:00:00",
+        "fechaFin": "0001-01-01T00:00:00",
+        "Nombre": "Wanda",
+        "Apellido": "Maximoff",
+        "Direccion": "Sokovia",
+        "FechaNacimiento": "2022-05-27T00:00:00"
       }
     ]
+  },
+  {
+    "NombreU": "San Carlos",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": null,
+    "Administrativos": [
+      {
+        "IGSS": "Igss2",
+        "Profesion": null,
+        "fechaIncio": "2022-03-07T00:00:00",
+        "fechaFin": "0001-01-01T00:00:00",
+        "Nombre": "Steve",
+        "Apellido": "Rogers",
+        "Direccion": "NY",
+        "FechaNacimiento": "2022-05-04T00:00:00"
+      }
+    ]
+  },
+  {
+    "NombreU": "Mesoamericana",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": null,
+    "Administrativos": [
+      {
+        "IGSS": "123",
+        "Profesion": null,
+        "fechaIncio": "2022-04-04T00:00:00",
+        "fechaFin": "2022-05-19T00:00:00",
+        "Nombre": "Nombre1",
+        "Apellido": "Apellido1",
+        "Direccion": "Colombia",
+        "FechaNacimiento": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "NombreU": "Mesoamericana",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": null,
+    "Administrativos": [
+      {
+        "IGSS": "456",
+        "Profesion": null,
+        "fechaIncio": "2022-05-02T00:00:00",
+        "fechaFin": "2022-05-26T00:00:00",
+        "Nombre": "Carol",
+        "Apellido": "Danvers",
+        "Direccion": "Cosmos",
+        "FechaNacimiento": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "NombreU": "Landivar",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": null,
+    "Administrativos": [
+      {
+        "IGSS": "456",
+        "Profesion": null,
+        "fechaIncio": "2022-03-02T00:00:00",
+        "fechaFin": "2022-05-02T00:00:00",
+        "Nombre": "Carol",
+        "Apellido": "Danvers",
+        "Direccion": "Cosmos",
+        "FechaNacimiento": "0001-01-01T00:00:00"
+      }
+    ]
+  },
+  {
+    "NombreU": "Mesoamericana",
+    "Sede": null,
+    "Alumnos": null,
+    "Profesores": [
+      {
+        "IDprof": "125",
+        "TituloUniversitario": "Astrofísico",
+        "Nombre": "Clark",
+        "Apellido": "Kent",
+        "Direccion": "Kripton",
+        "FechaNacimiento": "0001-01-01T00:00:00"
+      }
+    ],
+    "Administrativos": null
   }
 ]

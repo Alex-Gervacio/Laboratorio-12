@@ -65,18 +65,5 @@ namespace Laboratorio_11
 
             NotasTemp.Clear();
         }
-
-        protected void ButtonUniversidad_Click(object sender, EventArgs e)
-        {
-            Universidad universidad = new Universidad();
-            universidad.NombreU = DropDownList1.SelectedValue;
-            universidad.Alumnos = AlumnosTemp.ToArray().ToList();
-
-            universidades.Add(universidad);
-
-            GuardarJson();
-
-            AlumnosTemp.Clear();
-        }
     }
 }

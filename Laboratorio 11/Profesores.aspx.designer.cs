@@ -11,26 +11,17 @@ namespace Laboratorio_11
 {
 
 
-    public partial class Update
+    public partial class Profesores
     {
 
         /// <summary>
-        /// Control TextBoxIGSS.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxIGSS;
-
-        /// <summary>
-        /// Control ButtonBuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonBuscar;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
 
         /// <summary>
         /// Control TextBoxNombre.
@@ -51,30 +42,39 @@ namespace Laboratorio_11
         protected global::System.Web.UI.WebControls.TextBox TextBoxApellido;
 
         /// <summary>
-        /// Control CalendarInicio.
+        /// Control TextBoxProfesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarInicio;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxProfesion;
 
         /// <summary>
-        /// Control CalendarFin.
+        /// Control TextBoxID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarFin;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxID;
 
         /// <summary>
-        /// Control ButtonActualizar.
+        /// Control TextBoxDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonActualizar;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxDireccion;
+
+        /// <summary>
+        /// Control ButtonIngresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonIngresar;
     }
 }

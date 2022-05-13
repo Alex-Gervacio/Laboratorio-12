@@ -9,5 +9,7 @@ namespace Laboratorio_11
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string Direccion { get; set; }
+        public DateTime FechaNacimiento { get; set; }
     }
 }

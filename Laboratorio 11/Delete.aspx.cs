@@ -12,45 +12,46 @@ namespace Laboratorio_11
     public partial class Delete : System.Web.UI.Page
     {
         static List<Universidad> universidades = new List<Universidad>();
-        static string carne;
+        static List<Profesor> profesor = new List<Profesor>();
+        static string id;
 
         protected void GuardarJson()
         {
             string json = JsonConvert.SerializeObject(universidades);
-            string archivo = Server.MapPath("Universidades.json");
+            string archivo = Server.MapPath("Profesores.json");
             System.IO.File.WriteAllText(archivo, json);
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            string archivo = Server.MapPath("Universidades.json");
+            string archivo = Server.MapPath("Profesores.json");
             StreamReader jsonStream = File.OpenText(archivo);
             string json = jsonStream.ReadToEnd();
             jsonStream.Close();
 
-            universidades = JsonConvert.DeserializeObject<List<Universidad>>(json);
+            profesor = JsonConvert.DeserializeObject<List<Profesor>>(json);
         }
 
         protected void ButtonBuscar_Click(object sender, EventArgs e)
         {
-            carne = TextBoxCarne.Text;
+            id = TextBoxID.Text;
             bool encontrado = false;
 
-            foreach (var u in universidades)
+            foreach (var u in profesor)
             {
-                Alumno alumnoEl = u.Alumnos.Find(c => c.Carne == carne);
+                Profesor profEl = profesor.Find(c => c.IDprof == id);
 
-                if (alumnoEl != null)
+                if (profEl != null)
                 {
-                    TextBoxNombre.Text = alumnoEl.Nombre;
-                    TextBoxApellido.Text = alumnoEl.Apellido;
+                    TextBoxNombre.Text = profEl.Nombre;
+                    TextBoxApellido.Text = profEl.Apellido;
                     encontrado = true;
                 }
             }
             if (!encontrado)
             {
                 Response.Write("<script>alert('No se econtró el Carné')</script>");
-                carne = "";
-                TextBoxCarne.Text = "";
+                id = "";
+                TextBoxID.Text = "";
                 TextBoxNombre.Text = "";
                 TextBoxApellido.Text = "";
             }
@@ -60,11 +61,11 @@ namespace Laboratorio_11
         {
             foreach (var u in universidades)
             {
-                Alumno alumnoEl = u.Alumnos.Find(c => c.Carne == carne);
+                Profesor profEl = profesor.Find(c => c.IDprof == id);
 
-                if (alumnoEl == null)
+                if (profEl == null)
                 {
-                    u.Alumnos.Remove(alumnoEl);
+                    u.Profesores.Remove(profEl);
                 }
             }
             GuardarJson();
